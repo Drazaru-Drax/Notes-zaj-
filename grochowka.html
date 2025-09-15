@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<body>
+     <h1>Zamówienie</h1>
+
+     Wybierz Obraz
+     <input type="file" id="plik" accept="image/png, image/jpeg" /></input> <br> <br>
+     Liczba Kopii: 
+     <input type="number" id="l_kopii"></input> <br> <br>
+      
+     <input type="radio" name="1" id="papier" value="1.5">Papier błyszczący</input>
+     <input type="radio" name="1" id="papier" value="2">Papier matowy</input> <br> <br>
+
+     <button id="dodaj">Dodaj do koszyka</button>
+
+
+     <div id="koszyk">
+          <h1>Koszyk</h1>
+
+     </div>
+     <script>
+          const btn1 = document.querySelector("#dodaj");
+          const koszyk = document.querySelector("#koszyk");
+
+          btn1.addEventListener("click", function () {
+          const plikInput = document.querySelector("#plik");
+          const lKopii = document.querySelector("#l_kopii").value;
+          const papier = document.querySelector('input[name="1"]:checked');
+
+          if (!plikInput.files.length || !lKopii || !papier) {
+               alert("Wybierz plik, liczbę kopii i papier!");
+               return;
+          }
+
+          let img = document.createElement("img");
+          img.src = URL.createObjectURL(plikInput.files[0]);
+          img.style.maxWidth = "150px";
+          koszyk.appendChild(img);
+
+          const cena = (parseFloat(papier.value) * parseInt(lKopii)).toFixed(2);
+
+          const paragraf = document.createElement("p");
+          paragraf.innerText = `Cena: ${cena} zł `;
+          koszyk.appendChild(paragraf);
+          });
+     </script>
+
+</body>
+</html>
