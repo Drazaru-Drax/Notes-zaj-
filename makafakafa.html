@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodawanie i Pitagoras</title>
+</head>
+<body>
+    <p>Liczba 1:</p>
+    <input type="number" name="a" id="a"><br><br>
+
+    <p>Liczba 2:</p>
+    <input type="number" name="b" id="b"><br><br>
+
+    <button id="btnAdd">Dodaj liczby</button>
+    <button id="btnPitagoras">Oblicz Pitagorasa</button><br><br>
+
+    <p id="paragraf"></p>
+
+    <script>
+        const suma = document.querySelector("#paragraf");
+        const a = document.querySelector("#a");
+        const b = document.querySelector("#b");
+        const btnAdd = document.querySelector("#btnAdd");
+        const btnPitagoras = document.querySelector("#btnPitagoras");
+
+        btnAdd.addEventListener("click", function () {
+            const valA = parseFloat(a.value) || 0;
+            const valB = parseFloat(b.value) || 0;
+            const wynik = valA + valB;
+
+            suma.innerHTML = "Suma: <strong>" + wynik + "</strong>";
+            alert("Suma: " + wynik);
+            console.log("Suma: " + wynik);
+        });
+
+        btnPitagoras.addEventListener("click", function () {
+            const valA = parseFloat(a.value) || 0;
+            const valB = parseFloat(b.value) || 0;
+            const c = Math.sqrt(valA * valA + valB * valB);
+
+            suma.innerHTML = "Przeciwprostokątna (c): <strong>" + c.toFixed(2) + "</strong>";
+            alert("Pitagoras: c = " + c.toFixed(2));
+            console.log("Pitagoras: " + c);
+        });
+    </script>
+</body>
+</html>
+
