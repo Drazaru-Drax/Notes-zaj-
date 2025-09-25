@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    table, th, td {
+      border: 3px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      width: 70px;
+      height: 70px;
+      text-align: center;
+    }
+  </style>
+</head>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tworzenie tabeli</title>
+  <style>
+    table, th, td {
+      border: 3px solid black;
+      border-collapse: collapse;
+    }
+    td {
+      width: 70px;
+      height: 70px;
+      text-align: center;
+      cursor: pointer;
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+  <p>Podaj wysokość (liczba wierszy):</p>
+  <input type="number" id="height" min="1" value="5" />
+  <p>Podaj szerokość (liczba kolumn):</p>
+  <input type="number" id="width" min="1" value="5" />
+  <p>Podaj kolor (np. red lub #00ff00):</p>
+  <input type="text" id="color" value="black" />
+  <br><br>
+  <button id="createTableBtn">Utwórz tabelę</button>
+
+  <div id="tableDiv"></div>
+
+  <script>
+    function createTable(height, width, color) {
+      const tableDiv = document.getElementById('tableDiv');
+      tableDiv.innerHTML = '';
+
+      const table = document.createElement('table');
+      const tbody = document.createElement('tbody');
+
+      for(let i = 0; i < height; i++) {
+        const tr = document.createElement('tr');
+        for(let j = 0; j < width; j++) {
+          const td = document.createElement('td');
+
+
+          td.addEventListener('click', function() {
+            if (this.style.backgroundColor === color) {
+              this.style.backgroundColor = 'white';
+            } else {
+              this.style.backgroundColor = color;
+            }
+          });
+
+          tr.appendChild(td);
+        }
+        tbody.appendChild(tr);
+      }
+
+      table.appendChild(tbody);
+      tableDiv.appendChild(table);
+    }
+
+
+    document.getElementById('createTableBtn').addEventListener('click', function() {
+      const height = parseInt(document.getElementById('height').value);
+      const width = parseInt(document.getElementById('width').value);
+      const color = document.getElementById('color').value.trim();
+
+      if (isNaN(height) || height <= 0 || isNaN(width) || width <= 0) {
+        alert('Podaj poprawne liczby większe niż 0 dla wysokości i szerokości!');
+        return;
+      }
+      if (color === '') {
+        alert('Podaj jakiś kolor!');
+        return;
+      }
+
+      createTable(height, width, color);
+    });
+  </script>
+</body>
+</html>
