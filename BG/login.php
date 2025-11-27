@@ -1,10 +1,5 @@
 <?php
-$host = 'localhost';
-$user = 'root';
-$pass = '';
-$dbname = 'komunikator';
-
-$conn = new mysqli($host, $user, $pass, $dbname);
+$conn = new mysqli("localhost", "root", "", "komunikator");
 
 if ($conn->connect_error) {
     die('Błąd połączenia: ' . $conn->connect_error);
@@ -13,7 +8,7 @@ if ($conn->connect_error) {
 $username = $_POST['username'] ?? '';
 $password = $_POST['password'] ?? '';
 
-$stmt = $conn->prepare("SELECT id, password_hash FROM users WHERE username = ?");
+$stmt = $conn->prepare("SELECT user_id, password_hash FROM users WHERE username = ?");
 $stmt->bind_param("s", $username);
 $stmt->execute();
 $stmt->store_result();
@@ -28,7 +23,7 @@ if ($stmt->num_rows === 1) {
         $_SESSION['user_id'] = $user_id;
         $_SESSION['username'] = $username;
 
-        header('Location: dashboard.php');
+        header('Location: main.php');
         exit;
     } else {
         echo "Błędne hasło!";

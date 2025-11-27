@@ -1,11 +1,6 @@
         <?php
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $host = 'localhost';
-            $user = 'root';
-            $pass = '';
-            $dbname = 'komunikator';
-
-            $conn = new mysqli($host, $user, $pass, $dbname);
+            $conn = new mysqli("localhost", "root", "", "komunikator");
 
             if ($conn->connect_error) {
                 die('Błąd połączenia: ' . $conn->connect_error);
