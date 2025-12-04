@@ -49,10 +49,20 @@ if ($conn->connect_error) { die("Błąd połączenia: " . $conn->connect_error);
             color: white;
             cursor: pointer;
         }
+        img{
+            height: 50px;
+            width: 50px;
+            float: right;
+        }
+        #p{
+            text-decoration: none;
+            color: white;
+        }
     </style>
 </head>
 <body>
-            <button type="submit" id = "com"><a href = "komunikator.php">Komunikator</a></button>
+    <a href = "start.php"><p id="p">Wyloguj</p></a>
+            <a href = "komunikator.php"><img src = "mess.jpg"></a>
 
 <h1>Strona główna</h1>
 
