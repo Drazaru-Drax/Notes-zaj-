@@ -1,0 +1,54 @@
+1. Podaj podstawowe cechy języka SQL
+
+- SQL (ang. Structured Query Language) 
+to uniwersalny język zapytań stosowany w systemach relacyjnych baz danych do komunikowania się z bazą.
+Jest on również podstawowym językiem programowania baz danych,
+pozwalającym na tworzenie i modyfikowanie obiektów bazy danych (na przykład tabel).
+
+2.Przedstaw hierarchię obiektów bazy danych w systemie SQL SERVER
+
+- Server ->Baza danych -> Schemat -> obiekt
+
+3.Jakiego typu danych są realizowane za pomocą języka DDL
+
+-tworzenie, modyfikacja i usuwanie z bazy danych 
+
+4.Jakiego typu danych są realizowane za pomocą języka DML
+
+-manipulacja i modyfikowanie danych
+
+5.Za pomocą jakich klauzuli języka SQL realizowane są połaczenia zewnętrzne?
+
+LEFT OUTER JOIN , FULL OUTER JOIN , RIGHT OUTER JOIN
+
+6.Jaką role w zapytaniu spełniają podzapytania?
+
+Mogą pełnić rolę warunki logiczne następnego zapytania 
+
+7.Kiedy należy stosować transakcje?
+
+Kiedy operacja musi być wykonana w całości a nie częściowo
+	
+8.Wymień właściwości transakcji
+
+atomic - atomiczność
+consistent - konsystencja
+isolatet - izolacja
+durable - wytrzymała
+
+9.Na czym polega współbierzność w dostępie do bazy danych?
+
+Wspołbierzność to zdolność do realizowania wielu procesów opartych na tych samych danych
+
+10.Na czym polega izolowanie transackji
+
+Blokowanie dostępu do bazy innym uzytkownikom w celu zapobiegania problemów
+
+11.Co to procedura składowa?
+
+stworzenie funkcji do powtarzalnych czynnosci aby nie pisac ich wiele razy i szybciej oraz efektywniej bylo mozna pracowac
+
+12.Jaką rolę w języku T-SQL spełniaja wyzwalacze?
+
+Wyzwalacze (ang. triggers) to specjalny rodzaj procedur składowanych, które są automatycznie wykonywane, gdy na serwerze wystąpi określone zdarzenie. Tymi zdarzeniami
+są operacje przeprowadzane przez użytkownika.  
