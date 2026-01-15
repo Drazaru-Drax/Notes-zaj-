@@ -1,0 +1,45 @@
+body {
+    font-family: 'Garamond';
+}
+
+header {
+    background-color: RosyBrown;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+main {
+    background-color: DarkSalmon;
+    text-align: center;
+    padding: 40px;
+}
+
+#lewy,
+#prawy {
+    float: left;
+    background-color: LightSalmon;
+    height: 300px;
+    width: 30%;
+}
+
+#srodek {
+    float: left;
+    background-color: LightSalmon;
+    height: 300px;
+    width: 40%;
+}
+
+footer {
+    clear: both;
+    background-color: RosyBrown;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+ol {
+    border: 2px solid rgb(205, 92, 92);
+    font-size: 150%;
+    list-style-position: inside;
+}
